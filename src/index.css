@@ -62,37 +62,37 @@ table {
 
 @font-face {
     font-family: 'Century-Gothic-Bold';
-    src: url('./src/assets/font/Century-Gothic-Bold.woff2') format('woff2');
+    src: url('../font/Century-Gothic-Bold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Century-Gothic-Regular';
-    src: url('./src/assets/font/Century-Gothic-Regular.ttf') format('truetype');
+    src: url('../font/Century-Gothic-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Century-Gothic-Regular';
-    src: url('./src/assets/font/Century-Gothic-Regular.woff') format('woff');
+    src: url('../font/Century-Gothic-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Century-Gothic-Regular';
-    src: url('./src/assets/font/Century-Gothic-Regular.woff2') format('woff2');
+    src: url('.../font/Century-Gothic-Regular.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Century-Gothic-SemiBold';
-    src: url('./src/assets/font/Century-Gothic-SemiBold.ttf') format('truetype');
+    src: url('../font/Century-Gothic-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Century-Gothic-SemiBold';
-    src: url('./src/assets/font/Century-Gothic-SemiBold.woff') format('woff');
+    src: url('../font/Century-Gothic-SemiBold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Century-Gothic-SemiBold';
-    src: url('./src/assets/font/Century-Gothic-SemiBold.woff2') format('woff2');
+    src: url('../font/Century-Gothic-SemiBold.woff2') format('woff2');
 }
 html {
   scroll-behavior: smooth;
