@@ -1,0 +1,9 @@
+.As_slider_img {
+  object-fit: cover;
+  height: 500px;
+}
+.As_slider_container
+{
+    width: 100%;
+    box-sizing: border-box;
+}

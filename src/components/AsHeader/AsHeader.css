@@ -1,0 +1,131 @@
+/* src/components/ASHeader/ASHeader.css */
+/* En ASHeader.css */
+.as-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 26px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(40, 44, 52, 0.8);
+  color: white;
+  transition: background-color 0.3s, padding 0.3s, box-shadow 0.3s;
+  z-index: 1000; /* Aumentar z-index */
+  box-sizing: border-box;
+  background-color: #FFF;
+    transition: all 2s ease; /* animación suave */
+}
+
+/* En tu contenedor principal */
+.main-content {
+  padding-top: 80px; /* Ajusta según la altura de tu header */
+}
+
+.as-header.scrolled {
+  background-color: #FFF;
+  padding: 14px 32px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(0);
+}
+
+.as-header .logo img {
+  height: 100px;
+  top: 5px;
+  position: absolute;
+  transition: height 0.3s, top 0.3s;
+}
+.as-header.scrolled .logo img {
+  height: 50px;
+  top: 6px;
+}
+
+.as-header .logo img:hover {
+  transform: scale(1.1);
+}
+
+.menu ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+      font-family: 'Century-Gothic-Bold';
+}
+
+.menu a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #56a145;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: #56a145;
+}
+
+
+/* Toggle visible solo en móviles */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: #000;
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .as-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-height: 0; /* colapsa la altura */
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s, max-height 0.3s;
+  }
+
+  .menu.active ul {
+    max-height: 500px; /* un valor grande que cubra todo el menú */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .menu.active ul {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+}

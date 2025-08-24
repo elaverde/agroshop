@@ -1,0 +1,104 @@
+/* AsQuienesSomos.css */
+
+.as-quienes-somos-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9fafb;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.as-quienes-somos-title {
+  font-size: 2.5rem;
+  font-family: 'Century-Gothic-Bold';
+  font-weight: 700;
+  color: #1e3a34; /* verde oscuro elegante */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.as-quienes-somos-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3bb273; /* verde brillante */
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.as-quienes-somos-description {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Century-Gothic-Regular';
+}
+
+.as-quienes-somos-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.as-quienes-somos-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.as-quienes-somos-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.as-quienes-somos-item h3 {
+  font-size: 1.5rem;
+  color: #256d46; /* verde medio */
+  margin-bottom: 15px;
+   font-family: 'Century-Gothic-Bold';
+}
+
+.as-quienes-somos-item p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+   font-family: 'Century-Gothic-Regular';
+}
+
+.as-quienes-somos-item ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.as-quienes-somos-item li {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 8px;
+  position: relative;
+  font-family: 'Century-Gothic-Regular';
+}
+
+.as-quienes-somos-item li::before {
+  content: "✔";
+  color: #3bb273;
+  font-weight: bold;
+  position: absolute;
+  left: -20px;
+}
+.as-quienes-somos-logo {
+    margin: 20px;
+}
+.as-quienes-somos-logo img {
+    max-width: 300px;
+    height: auto;
+
+}

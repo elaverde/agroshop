@@ -1,0 +1,43 @@
+.as-contacto-title {
+    color: #e0e1dd;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Century-Gothic-Bold';
+    color: #1b263b;
+    margin: 10px;
+}
+
+.as-contacto-info {
+    background: #1b263b;
+    color: #e0e1dd;
+    padding: 1rem;
+ 
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+        font-family: 'Century-Gothic-Bold';
+}
+
+.as-contacto-info div {
+    margin-bottom: 0.5rem;
+}
+
+.as-contacto-maps {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.as-contacto-mensaje {
+    color: #e0e1dd;
+    background: #415a77;
+    padding: 0.75rem 1rem;
+
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Century-Gothic-Bold'; 
+}
