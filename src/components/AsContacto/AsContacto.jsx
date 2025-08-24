@@ -12,7 +12,7 @@ const AsContacto = () => {
                     <strong>Responsable:</strong> Yon Fredy Laverde Molina
                 </div>
                 <div>
-                    <strong>Teléfono:</strong> +52 313 453 0510
+                    <strong>Teléfono:</strong> +57 313 453 0510
                 </div>
             </div>
             <div className="as-contacto-maps">
