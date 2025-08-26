@@ -35,8 +35,9 @@
   position: absolute;
   transition: height 0.3s, top 0.3s;
 }
+
 .as-header.scrolled .logo img {
-  height: 50px;
+  height: 80px;
   top: 6px;
 }
 

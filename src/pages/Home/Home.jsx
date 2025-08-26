@@ -5,12 +5,14 @@ import AsOfertas from '../../components/AsOfertas/AsOfertas';
 import AsServicios from '../../components/AsServicios/AsServicios';
 import AsQuienesSomos from '../../components/AsQuienesSomos/AsQuienesSomos';
 import AsContacto from '../../components/AsContacto/AsContacto';
+import AsRedes from '../../components/AsRedes/AsRedes';
 export default function Home() {
   return (
     <div>
       <ASHeader />
 
       <AsSlider />
+      <AsRedes />
       <section id="inicio" >
         <AsOfertas />
       </section>

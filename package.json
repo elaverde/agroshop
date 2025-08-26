@@ -12,6 +12,7 @@
     "framer-motion": "^12.23.12",
     "preact": "^10.27.0",
     "react-countup": "^6.5.3",
+    "react-gtag": "^0.0.0",
     "react-intersection-observer": "^9.16.0",
     "swiper": "^11.2.10"
   },
