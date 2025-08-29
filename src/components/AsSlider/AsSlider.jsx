@@ -20,13 +20,13 @@ export default function AsHeader() {
         autoplay={{ delay: 2500, disableOnInteraction: false }}
       >
         <SwiperSlide>
-          <img className="As_slider_img" width={"100%"} height={"300"} src="/slider1.jpg" alt="Slide 1" />
+          <img className="As_slider_img" width={"100%"} height={"300"} src="./slider1.jpg" alt="Slide 1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="As_slider_img" width={"100%"} height={"300"} src="/slider2.jpg" alt="Slide 2" />
+          <img className="As_slider_img" width={"100%"} height={"300"} src="./slider2.jpg" alt="Slide 2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="As_slider_img" width={"100%"} height={"300"} src="/slider3.jpg" alt="Slide 2" />
+          <img className="As_slider_img" width={"100%"} height={"300"} src="./slider3.jpg" alt="Slide 2" />
         </SwiperSlide>
         
       </Swiper>

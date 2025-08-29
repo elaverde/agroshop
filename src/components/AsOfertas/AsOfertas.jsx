@@ -30,19 +30,19 @@ const AsOfertas = () => {
             </p>
             <div className='asofertas-image-productos'>
                 <div className='asofertas-image-container'>
-                    <img src="/oferta_polla_campesina.jpg"  />
+                    <img src="./oferta_polla_campesina.jpg"  />
                     <p className='asoferta_titulo'>Polla Campesina</p>
                 </div>
                 <div className='asofertas-image-container'>
-                    <img src="/oferta_pollo_blanco.webp"  />
+                    <img src="./oferta_pollo_blanco.webp"  />
                     <p className='asoferta_titulo'>Pollo Blanco</p>
                 </div>
                 <div className='asofertas-image-container'>
-                    <img src="/oferta_polla_roja.jpg"  />
+                    <img src="./oferta_polla_roja.jpg"  />
                     <p className='asoferta_titulo'>Polla Roja</p>
                 </div>
                 <div className='asofertas-image-container'>
-                    <img src="/oferta_pollito.jpg"  />
+                    <img src="./oferta_pollito.jpg"  />
                     <p className='asoferta_titulo'>Pollito</p>
                 </div>
 
