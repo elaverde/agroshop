@@ -1,63 +1,130 @@
 import React, { useState, useEffect } from 'react';
-import './AsServicios.css';
-import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import CountUp from 'react-countup';
+import './AsServicios.css';
 
-const AsServicios = () => {
-  // Hook de visibilidad
-  const { ref, inView } = useInView({
-    triggerOnce: true, // se activa solo la primera vez
-    threshold: 0.3,    // porcentaje visible para disparar animación
-  });
+const stats = [
+  {
+    id: 1,
+    icon: './icon_pollo_rojo.svg',
+    end: 2000,
+    label: 'Aves Rojas',
+    desc: 'Pollas de alto rendimiento en producción de huevos',
+    ringColor: '#e74c3c',
+  },
+  {
+    id: 2,
+    icon: './icon_pollo_blanco.svg',
+    end: 2720,
+    label: 'Aves Blancas',
+    desc: 'Pollos de engorde con genética de elite',
+    ringColor: '#74c69d',
+  },
+  {
+    id: 3,
+    icon: './icon_pollo_campesino.svg',
+    end: 10000,
+    label: 'Aves Criollas',
+    desc: 'Criollas con la mejor genética colombiana',
+    ringColor: '#f4a261',
+  },
+];
 
-  // Estado para activar los contadores solo cuando estén visibles
-  const [start, setStart] = useState(false);
+const highlights = [
+  { icon: '🌿', text: 'Alimentación 100% Natural' },
+  { icon: '💊', text: 'Salud y Bioseguridad' },
+  { icon: '🧬', text: 'Genética Superior' },
+  { icon: '🤝', text: 'Asesoría Experta' },
+];
+
+export default function AsServicios() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.25 });
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    if (inView) {
-      setStart(true);
-    }
+    if (inView) setStarted(true);
   }, [inView]);
 
   return (
-    <div className="as-servicios-container" ref={ref}>
-      <h2 className="as-servicios-title">Impulsa tu granja con lo mejor de AgroShop</h2>
-      <h3 className="as-servicios-subtitle"><b>Nuestro compromiso con el</b> Agro</h3>
-      <img className="as-servicios-image" src="./pollo.png" alt="Descripción de la imagen" />
+    <section className="as-servicios" ref={ref}>
+      {/* Background layers */}
+      <div className="servicios-dots" />
+      <div className="servicios-blob-top" />
+      <div className="servicios-blob-bot" />
 
-      <p className="as-servicios-description">
-        En <strong>AgroShop</strong> ofrecemos productos de alta calidad y servicios especializados para potenciar tu granja. 
-        Nuestro equipo de expertos está siempre listo para brindarte asesoría personalizada, ayudándote a tomar las mejores decisiones 
-        y a maximizar el rendimiento de tu negocio.
-      </p>
+      <div className="servicios-inner">
+        {/* Header */}
+        <motion.div
+          className="servicios-header"
+          initial={{ opacity: 0, y: 44 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.75 }}
+        >
+          <span className="section-tag" style={{ background: 'rgba(255,255,255,0.14)', color: 'rgba(255,255,255,0.88)' }}>
+            📊 Nuestra Capacidad
+          </span>
+          <h2 className="section-heading" style={{ color: 'white' }}>
+            Impulsa tu Granja con lo<br />
+            <span style={{ color: 'var(--gold)', WebkitTextFillColor: 'var(--gold)' }}>
+              Mejor de AgroShop
+            </span>
+          </h2>
+          <p className="servicios-desc">
+            Productos de alta calidad y servicios especializados para potenciar tu granja.
+            Nuestro equipo de expertos está siempre listo para brindarte asesoría personalizada.
+          </p>
+        </motion.div>
 
-      <div className='as-servicio-count-productos'>
-        <div className='as-servicio-item'>
-          <div className='as-servicio-icono'>
-            <img src="./icon_pollo_rojo.svg" alt="Ícono de producto" />
-          </div>
-          {start && <CountUp className='as-servicio-contador' end={2000} duration={3} />}
-          <p className='as-servicio-texto'>Aves Rojas</p>
-        </div>
+        {/* Highlights */}
+        <motion.div
+          className="servicios-highlights"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {highlights.map(h => (
+            <div key={h.text} className="highlight-pill">
+              <span>{h.icon}</span>
+              <span>{h.text}</span>
+            </div>
+          ))}
+        </motion.div>
 
-        <div className='as-servicio-item'>
-          <div className='as-servicio-icono'>
-            <img src="./icon_pollo_blanco.svg" alt="Ícono de producto" />
-          </div>
-          {start && <CountUp className='as-servicio-contador' end={2720} duration={3} />}
-          <p className='as-servicio-texto'>Aves Blancas</p>
-        </div>
+        {/* Stat cards */}
+        <div className="servicios-stats">
+          {stats.map((s, i) => (
+            <motion.div
+              key={s.id}
+              className="stat-card"
+              initial={{ opacity: 0, y: 60, scale: 0.88 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.72, delay: i * 0.16 }}
+              whileHover={{ y: -10, scale: 1.04 }}
+            >
+              {/* Icon */}
+              <div className="stat-icon-shell" style={{ '--ring': s.ringColor }}>
+                <img src={s.icon} alt={s.label} />
+                <span className="stat-ring" />
+              </div>
 
-        <div className='as-servicio-item'>
-          <div className='as-servicio-icono'>
-            <img src="./icon_pollo_campesino.svg" alt="Ícono de producto" />
-          </div>
-          {start && <CountUp className='as-servicio-contador' end={10000} duration={3} />}
-          <p className='as-servicio-texto'>Aves Criollas</p>
+              {/* Number */}
+              <div className="stat-num-row">
+                {started
+                  ? <CountUp className="stat-num" start={0} end={s.end} duration={2.6} separator="," suffix="+" />
+                  : <span className="stat-num">0+</span>
+                }
+              </div>
+
+              <h3 className="stat-label">{s.label}</h3>
+              <p className="stat-desc">{s.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default AsServicios;
+}

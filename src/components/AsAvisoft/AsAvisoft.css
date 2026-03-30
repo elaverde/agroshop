@@ -1,0 +1,416 @@
+/* ===== AVISOFT SECTION ===== */
+.as-avisoft {
+  position: relative;
+  padding: 110px 40px 100px;
+  background: linear-gradient(150deg, #0d1b2a 0%, #1a2e1e 50%, #0a1509 100%);
+  overflow: hidden;
+}
+
+/* BG dots */
+.avisoft-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Blobs */
+.avisoft-blob-1 {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.10), transparent 65%);
+  top: -250px; left: -180px;
+  pointer-events: none;
+  animation: blob 12s ease-in-out infinite;
+}
+.avisoft-blob-2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244,162,97,0.07), transparent 65%);
+  bottom: -150px; right: 5%;
+  pointer-events: none;
+  animation: blob 15s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+/* Inner */
+.avisoft-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.avisoft-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.avisoft-tag {
+  background: rgba(255,255,255,0.09) !important;
+  color: rgba(255,255,255,0.82) !important;
+  border: 1px solid rgba(255,255,255,0.13);
+}
+/* Title row with logo */
+.avisoft-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.avisoft-logo-big {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: contain;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.40), 0 0 0 2px rgba(82,183,136,0.25);
+}
+
+.avisoft-accent {
+  background: linear-gradient(135deg, #52b788, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.avisoft-subtitle {
+  color: rgba(255,255,255,0.55);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.78;
+}
+
+/* ===== BODY ===== */
+.avisoft-body {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ===== PHONE MOCKUP ===== */
+.avisoft-mockup-col {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 100px;
+}
+
+.phone-frame {
+  position: relative;
+  width: 280px;
+}
+
+.phone-screen {
+  background: #0f1f14;
+  border-radius: 36px;
+  border: 3px solid rgba(82,183,136,0.25);
+  padding: 48px 18px 20px;
+  box-shadow:
+    0 0 0 8px rgba(255,255,255,0.04),
+    0 40px 80px rgba(0,0,0,0.55),
+    0 0 60px rgba(82,183,136,0.12) inset;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px; height: 18px;
+  background: #0f1f14;
+  border-radius: 0 0 14px 14px;
+  border: 3px solid rgba(82,183,136,0.25);
+  border-top: none;
+  z-index: 2;
+}
+
+/* App topbar */
+.app-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.app-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  object-fit: contain;
+}
+.app-logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+}
+.app-topbar-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 8px rgba(82,183,136,0.7);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* App stat cards */
+.app-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.app-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 3px solid var(--ac);
+  border-radius: 10px;
+  padding: 10px 10px 8px;
+}
+.app-card-val {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.app-card-lbl {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.40);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Bar chart */
+.app-bar-chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 12px 10px 8px;
+  min-height: 90px;
+}
+.app-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--green-700), var(--green-500));
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom;
+  min-height: 4px;
+  box-shadow: 0 0 8px rgba(82,183,136,0.25);
+}
+
+/* Bottom nav */
+.app-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 10px 8px;
+  margin-top: 4px;
+}
+.app-nav-icon {
+  font-size: 1.2rem;
+  opacity: 0.40;
+  transition: opacity 0.2s;
+}
+.app-nav-icon.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(82,183,136,0.6));
+}
+
+/* Glow under phone */
+.phone-glow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 60px;
+  background: radial-gradient(ellipse, rgba(82,183,136,0.30), transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== FEATURES ===== */
+.avisoft-features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avisoft-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.avisoft-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  cursor: default;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.avisoft-feat:hover {
+  background: rgba(82,183,136,0.09);
+  border-color: rgba(82,183,136,0.22);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.feat-icon {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fi, var(--green-400));
+  transition: background 0.3s, border-color 0.3s;
+}
+.avisoft-feat:hover .feat-icon {
+  background: rgba(255,255,255,0.11);
+  border-color: var(--fi, var(--green-500));
+}
+.feat-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+}
+.feat-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.60;
+}
+
+/* ===== PRIVACY BADGE ===== */
+.privacy-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(82,183,136,0.08);
+  border: 1px solid rgba(82,183,136,0.20);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.privacy-icon {
+  flex-shrink: 0;
+  color: var(--green-400);
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.privacy-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--green-400);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+.privacy-text {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.65;
+}
+
+/* ===== CTAs ===== */
+.avisoft-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Google Play Button */
+.gplay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  color: #111;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.30);
+  transition: all 0.3s var(--ease);
+  text-decoration: none;
+}
+.gplay-icon {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  color: #414141;
+}
+.gplay-sub {
+  display: block;
+  font-size: 0.68rem;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.gplay-main {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1;
+}
+
+/* WhatsApp secondary */
+.avisoft-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.80);
+  font-weight: 600;
+  font-size: 0.90rem;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s var(--ease);
+}
+.avisoft-wa-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+  .avisoft-body {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .avisoft-mockup-col {
+    position: static;
+    order: -1;
+  }
+}
+@media (max-width: 640px) {
+  .as-avisoft { padding: 70px 20px 80px; }
+  .avisoft-features-grid { grid-template-columns: 1fr; }
+  .avisoft-ctas { flex-direction: column; align-items: stretch; }
+  .gplay-btn, .avisoft-wa-btn { justify-content: center; }
+  .phone-frame { width: 240px; }
+}

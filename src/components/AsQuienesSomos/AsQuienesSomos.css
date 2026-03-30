@@ -1,104 +1,203 @@
-/* AsQuienesSomos.css */
-
-.as-quienes-somos-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9fafb;
-  box-sizing: border-box;
-  padding: 50px;
-}
-
-.as-quienes-somos-title {
-  font-size: 2.5rem;
-  font-family: 'Century-Gothic-Bold';
-  font-weight: 700;
-  color: #1e3a34; /* verde oscuro elegante */
-  margin-bottom: 20px;
+/* ===== QUIENES SOMOS ===== */
+.as-quienes {
+  padding: 110px 40px 100px;
+  background: linear-gradient(180deg, var(--green-50) 0%, #ffffff 60%, var(--gray-50) 100%);
   position: relative;
+  overflow: hidden;
 }
-
-.as-quienes-somos-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #3bb273; /* verde brillante */
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-
-.as-quienes-somos-description {
-  font-size: 1.1rem;
-  color: #4b5563;
-  margin-bottom: 50px;
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Century-Gothic-Regular';
-}
-
-.as-quienes-somos-blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.as-quienes-somos-item {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 25px;
-  text-align: left;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.as-quienes-somos-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.as-quienes-somos-item h3 {
-  font-size: 1.5rem;
-  color: #256d46; /* verde medio */
-  margin-bottom: 15px;
-   font-family: 'Century-Gothic-Bold';
-}
-
-.as-quienes-somos-item p {
-  font-size: 1rem;
-  color: #374151;
-  line-height: 1.6;
-   font-family: 'Century-Gothic-Regular';
-}
-
-.as-quienes-somos-item ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.as-quienes-somos-item li {
-  font-size: 1rem;
-  color: #374151;
-  margin-bottom: 8px;
-  position: relative;
-  font-family: 'Century-Gothic-Regular';
-}
-
-.as-quienes-somos-item li::before {
-  content: "✔";
-  color: #3bb273;
-  font-weight: bold;
+.as-quienes::before {
+  content: '';
   position: absolute;
-  left: -20px;
+  top: -100px; right: -150px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(82,183,136,0.07), transparent 68%);
+  pointer-events: none;
 }
-.as-quienes-somos-logo {
-    margin: 20px;
-}
-.as-quienes-somos-logo img {
-    max-width: 300px;
-    height: auto;
 
+.quienes-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== INTRO (SPLIT) ===== */
+.quienes-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 88px;
+}
+
+.quienes-desc {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  line-height: 1.80;
+  margin-bottom: 36px;
+}
+
+.quienes-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  color: var(--green-800);
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.25s;
+}
+.feature-pill:hover {
+  background: var(--green-100);
+  transform: translateX(6px);
+}
+.feature-pill svg {
+  width: 15px; height: 15px;
+  color: var(--green-700);
+  flex-shrink: 0;
+}
+
+/* ===== LOGO SHOWCASE ===== */
+.quienes-logo-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-showcase {
+  position: relative;
+  width: 360px; height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-blob {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-100), var(--green-50));
+  border: 2px solid var(--green-200, #b7e4c7);
+  animation: blob 7s ease-in-out infinite;
+}
+.logo-blob-2 {
+  inset: 20px;
+  background: transparent;
+  border: 1px dashed rgba(82,183,136,0.3);
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.logo-main {
+  position: relative;
+  z-index: 2;
+  max-width: 240px;
+  filter: drop-shadow(0 24px 48px rgba(45,106,79,0.18));
+  animation: float 7s ease-in-out infinite;
+}
+
+/* ===== CARDS ===== */
+.quienes-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.quienes-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 36px 28px 32px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: box-shadow 0.35s var(--ease);
+}
+.quienes-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+.card-accent-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--card-accent, var(--green-600));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.card-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--card-accent, var(--green-600)) 0%, transparent 120%);
+  background-color: color-mix(in srgb, var(--card-accent, var(--green-600)) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--card-accent, var(--green-600)) 28%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.quienes-card:hover .card-icon-wrap {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--card-accent, var(--green-600)) 30%, transparent);
+}
+.card-svg-icon {
+  color: var(--card-accent, var(--green-600));
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.card-text {
+  font-size: 0.92rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+.card-values {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.card-values li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+.card-values svg {
+  width: 15px; height: 15px;
+  color: var(--card-accent, var(--green-700));
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.card-values strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .quienes-intro {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .quienes-logo-side { order: -1; }
+  .logo-showcase { width: 260px; height: 260px; }
+  .logo-main { max-width: 180px; }
+}
+@media (max-width: 768px) {
+  .as-quienes { padding: 70px 24px 80px; }
+  .quienes-cards { grid-template-columns: 1fr; }
+  .quienes-intro { margin-bottom: 56px; }
 }

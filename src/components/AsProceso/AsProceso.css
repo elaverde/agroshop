@@ -1,0 +1,402 @@
+/* ===== PROCESO SECTION ===== */
+.as-proceso {
+  padding: 110px 40px 90px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.proceso-bg-left {
+  position: absolute;
+  bottom: -200px; left: -120px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(82,183,136,0.07), transparent 68%);
+  pointer-events: none;
+}
+.proceso-bg-right {
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(244,162,97,0.06), transparent 65%);
+  pointer-events: none;
+}
+
+.proceso-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.proceso-header {
+  text-align: center;
+  margin-bottom: 0;
+}
+.proceso-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+
+/* ===== STEPS ===== */
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 32px;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Horizontal connecting line */
+.proceso-connector-line {
+  position: absolute;
+  top: 52px;
+  left: calc(12.5% + 12px);
+  right: calc(12.5% + 12px);
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-600), var(--gold));
+  border-radius: 3px;
+  transform-origin: left;
+  z-index: 0;
+}
+.proceso-connector-line::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: inherit;
+  filter: blur(6px);
+  opacity: 0.35;
+  border-radius: 3px;
+}
+
+/* Single step */
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Bubble */
+.paso-bubble {
+  width: 104px; height: 104px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--paso-color, var(--green-600)), rgba(255,255,255,0.95));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transition: box-shadow 0.3s;
+}
+.paso-bubble:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.16);
+}
+.paso-svg {
+  color: white;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.20));
+}
+.paso-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: calc(var(--radius-lg) + 4px);
+  border: 2px solid var(--paso-color, var(--green-500));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.paso-bubble:hover .paso-ring { opacity: 0.30; }
+
+/* Number */
+.paso-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--green-700);
+  letter-spacing: 2px;
+  background: var(--green-100);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+/* Text */
+.paso-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.paso-desc {
+  font-size: 0.86rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════
+   TRUCK SCENE — Premium Illustration
+═══════════════════════════════════════════ */
+.truck-scene {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: 56px 0 16px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #e8f5ee 0%,
+    #d0ead9 40%,
+    #b8ddc6 70%,
+    #a5d0b8 100%
+  );
+  box-shadow: 0 4px 40px rgba(45,106,79,0.10), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Sky tint */
+.ts-sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(219,234,254,0.55) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ── Layer base ── */
+.ts-layer {
+  position: absolute;
+  left: 0; right: 0;
+  pointer-events: none;
+}
+
+/* ── Hills far — very slow ── */
+.ts-hills-far {
+  bottom: 62px;
+  animation: layer-scroll 24s linear infinite;
+  opacity: 0.85;
+}
+
+/* ── Trees mid ── */
+.ts-trees-mid {
+  bottom: 58px;
+  height: 80px;
+}
+
+.ts-tree {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  animation: tree-pass 10s linear infinite;
+}
+.ts-tree-0 { width: 36px; animation-delay:  0s;    }
+.ts-tree-1 { width: 28px; animation-delay: -1.8s;  }
+.ts-tree-2 { width: 40px; animation-delay: -3.6s;  }
+.ts-tree-3 { width: 30px; animation-delay: -5.4s;  }
+.ts-tree-4 { width: 34px; animation-delay: -7.2s;  }
+.ts-tree-5 { width: 26px; animation-delay: -9.0s;  }
+
+@keyframes tree-pass {
+  0%   { left: 105%; opacity: 0; }
+  5%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { left: -8%;  opacity: 0; }
+}
+
+@keyframes layer-scroll {
+  0%   { transform: translateX(0);    }
+  100% { transform: translateX(-40%); }
+}
+
+/* ── Road ── */
+.ts-road {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 52px;
+  background: linear-gradient(180deg, #4b5563 0%, #374151 100%);
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.18);
+}
+.ts-road::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(82,183,136,0.4), transparent);
+}
+
+/* Líneas centrales */
+.ts-road-marks {
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  height: 3px;
+}
+.ts-mark {
+  flex-shrink: 0;
+  width: 52px;
+  height: 3px;
+  background: #fde68a;
+  border-radius: 2px;
+  margin-right: 40px;
+  animation: marks-scroll 1.4s linear infinite;
+}
+@keyframes marks-scroll {
+  0%   { transform: translateX(0);     }
+  100% { transform: translateX(-92px); }
+}
+
+/* ── Truck ── */
+.ts-truck {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(440px, 86vw);
+  animation: truck-glide 0.25s ease-in-out infinite alternate;
+  filter: drop-shadow(0 6px 16px rgba(27,67,50,0.22));
+}
+.truck-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Leve suspensión */
+@keyframes truck-glide {
+  0%   { transform: translateX(-50%) translateY(0px)    rotate(0deg);     }
+  100% { transform: translateX(-50%) translateY(-2px)   rotate(0.15deg);  }
+}
+
+/* ── Ruedas ── */
+.wheel {
+  transform-box: fill-box;
+  animation: wheel-turn 0.7s linear infinite;
+}
+@keyframes wheel-turn {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Aves — balanceo suave ── */
+.bird-sway {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: bird-gentle 0.9s ease-in-out infinite alternate;
+}
+.bird-a { animation-delay:  0s;    animation-duration: 0.95s; }
+.bird-b { animation-delay: -0.3s;  animation-duration: 0.80s; }
+.bird-c { animation-delay: -0.15s; animation-duration: 1.05s; }
+.bird-d { animation-delay: -0.5s;  animation-duration: 0.88s; }
+.bird-e { animation-delay: -0.7s;  animation-duration: 0.75s; }
+
+@keyframes bird-gentle {
+  0%   { transform: translateY(0)     rotate(0deg);    }
+  100% { transform: translateY(-3px)  rotate(1.2deg);  }
+}
+
+/* ── Humo — muy sutil ── */
+.smoke {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: smoke-drift 2.4s ease-out infinite;
+}
+.smoke-1 { animation-delay: 0s;    }
+.smoke-2 { animation-delay: 0.65s; }
+.smoke-3 { animation-delay: 1.3s;  }
+@keyframes smoke-drift {
+  0%   { transform: translateY(0)    translateX(0)   scale(0.6); opacity: 0.55; }
+  50%  { transform: translateY(-8px) translateX(2px) scale(1.1); opacity: 0.25; }
+  100% { transform: translateY(-18px)translateX(4px) scale(1.7); opacity: 0;    }
+}
+
+/* ── Label badge ── */
+.ts-label {
+  position: absolute;
+  top: 12px; right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(27,67,50,0.72);
+  backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.82);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(82,183,136,0.30);
+}
+.ts-label svg { color: var(--green-400); flex-shrink: 0; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .truck-scene { height: 150px; margin: 40px 0 12px; }
+  .ts-trees-mid, .ts-hills-far { display: none; }
+  .ts-road { height: 40px; }
+  .ts-truck { bottom: 18px; }
+  .ts-label { display: none; }
+}
+
+/* ===== BOTTOM CTA ===== */
+.proceso-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 72px;
+  flex-wrap: wrap;
+}
+.proceso-cta span {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+}
+.proceso-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--green-700), var(--green-600));
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 28px rgba(64,145,108,0.30);
+  transition: all 0.3s var(--ease);
+}
+.proceso-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 48px rgba(64,145,108,0.40);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .proceso-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 24px;
+  }
+  .proceso-connector-line { display: none; }
+  .paso { padding: 0 8px; }
+}
+@media (max-width: 560px) {
+  .as-proceso { padding: 70px 20px 64px; }
+  .proceso-steps {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .proceso-cta { flex-direction: column; }
+}

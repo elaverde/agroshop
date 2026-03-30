@@ -1,105 +1,200 @@
-/* CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* ============================================
+   AGROSHOP — GLOBAL STYLES & DESIGN TOKENS
+   ============================================ */
+
+:root {
+  --green-900: #1b4332;
+  --green-800: #2d6a4f;
+  --green-700: #40916c;
+  --green-600: #52b788;
+  --green-500: #74c69d;
+  --green-400: #95d5b2;
+  --green-100: #d8f3dc;
+  --green-50:  #f0faf2;
+  --gold:      #f4a261;
+  --gold-dark: #e76f51;
+  --dark:      #0a1509;
+  --dark-2:    #1a2e1e;
+  --white:     #ffffff;
+  --gray-50:   #f9fafb;
+  --gray-100:  #f3f4f6;
+  --gray-200:  #e5e7eb;
+  --gray-500:  #9ca3af;
+  --gray-600:  #6b7280;
+  --text:      #111827;
+
+  --font: 'Century Gothic', 'CenturyGothic', 'Century Gothic', AppleGothic, Optima, sans-serif;
+
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow:    0 4px 20px rgba(0,0,0,0.10);
+  --shadow-lg: 0 16px 60px rgba(0,0,0,0.14);
+  --shadow-xl: 0 32px 80px rgba(0,0,0,0.18);
+  --shadow-green: 0 8px 40px rgba(64,145,108,0.30);
+  --shadow-gold:  0 8px 40px rgba(244,162,97,0.30);
+  --glow-green: 0 0 50px rgba(82,183,136,0.20);
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius:    16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-2xl:48px;
+  --radius-full: 9999px;
+
+  --ease:        cubic-bezier(0.4,0,0.2,1);
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --ease-out:    cubic-bezier(0,0,0.2,1);
+}
+
+/* ==================== RESET ==================== */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-  display: block;
-}
-
-body,html {
-  line-height: 1;
-  box-sizing: border-box !important;
-  overflow-x: hidden;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-@font-face {
-    font-family: 'Century-Gothic-Bold';
-    src: url('./src/assets/font/Century-Gothic-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-Bold';
-    src: url('./src/assets/font/Century-Gothic-Bold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-Bold';
-    src: url('../font/Century-Gothic-Bold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-Regular';
-    src: url('../font/Century-Gothic-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-Regular';
-    src: url('../font/Century-Gothic-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-Regular';
-    src: url('.../font/Century-Gothic-Regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-SemiBold';
-    src: url('../font/Century-Gothic-SemiBold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-SemiBold';
-    src: url('../font/Century-Gothic-SemiBold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Century-Gothic-SemiBold';
-    src: url('../font/Century-Gothic-SemiBold.woff2') format('woff2');
 }
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
-#inicio,
-#servicios,
-#nosotros,
-#contacto {
-  scroll-margin-top: 80px; /* Ajusta según la altura de tu header */
+body, html {
+  overflow-x: hidden;
+  line-height: 1;
+}
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ==================== SCROLL OFFSETS ==================== */
+#inicio, #servicios, #nosotros, #contacto {
+  scroll-margin-top: 80px;
+}
+
+/* ==================== FONTS ==================== */
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century-Gothic-Bold.woff2') format('woff2'),
+       url('/fonts/Century-Gothic-Bold.woff')  format('woff'),
+       url('/fonts/Century-Gothic-Bold.ttf')   format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century-Gothic-Regular.woff2') format('woff2'),
+       url('/fonts/Century-Gothic-Regular.woff')  format('woff'),
+       url('/fonts/Century-Gothic-Regular.ttf')   format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century-Gothic-SemiBold.woff2') format('woff2'),
+       url('/fonts/Century-Gothic-SemiBold.woff')  format('woff'),
+       url('/fonts/Century-Gothic-SemiBold.ttf')   format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* ==================== KEYFRAMES ==================== */
+@keyframes float {
+  0%,100% { transform: translateY(0)   rotate(0deg);  }
+  33%      { transform: translateY(-22px) rotate(4deg);  }
+  66%      { transform: translateY(-10px) rotate(-3deg); }
+}
+@keyframes float-reverse {
+  0%,100% { transform: translateY(0)  rotate(0deg);  }
+  33%      { transform: translateY(16px) rotate(-4deg); }
+  66%      { transform: translateY(8px)  rotate(3deg);  }
+}
+@keyframes shimmer {
+  0%   { background-position: -400% center; }
+  100% { background-position:  400% center; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0;   }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes gradient-shift {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+@keyframes bounce-y {
+  0%,100% { transform: translateY(0);  }
+  50%      { transform: translateY(9px); }
+}
+@keyframes blob {
+  0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+@keyframes line-expand {
+  from { width: 0;   }
+  to   { width: 60px; }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--green-600), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-100);
+  color: var(--green-800);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-700), var(--gold));
+  border-radius: var(--radius-full);
+  margin: 0 auto 56px;
+  animation: line-expand 0.8s var(--ease-out) both;
+}
+
+/* ==================== REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
